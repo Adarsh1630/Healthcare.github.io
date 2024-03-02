@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicines</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="Medicines">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <form class="d-flex" role="search">
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Enter Your Syntoms" title="Type in a category">
+
+          <ul id="myMenu">
+            <li><a href="abc.html">Sneezing</a></li>
+           <li><a href="abc2.html">Fever</a></li>
+             <li><a href="abc.html">Stomach Pain</a></li>
+             <li><a href="abc.html">Headache</a></li>
+             <li><a href="abc.html">Blood Pressure High</a></li>
+             <li><a href="abc.html">Blood Pressure Low</a></li>
+             <li><a href="abc.html">Normal Cold</a></li>
+             <li><a href="abc.html">Cuff</a></li>
+             <li><a href="abc.html">Weakness</a></li>
+           </ul>
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </section>
+
+    <script>
+        function myFunction() {
+          // Declare variables
+          var input, filter, ul, li, a, i;
+          input = document.getElementById("mySearch");
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myMenu");
+          li = ul.getElementsByTagName("li");
+        
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+        }
+        </script>
+</body>
+</html>
